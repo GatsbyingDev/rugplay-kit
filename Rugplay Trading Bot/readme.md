@@ -1,36 +1,39 @@
-# Rugplay Trading BoT
+# Rugplay Trading BOT
 
-This is a Python toolkit for Rugplay.com. It has scripts that help you trade coins, sell your portfolio, and kinda automate stuff so you don’t have to do everything manually. Made for the community, by the community.
+**Rugplay Trading BOT** is a Python-based community toolkit for Rugplay.com. It provides scripts to automate coin management, streamline trading operations, and monitor portfolios. Designed for educational and community use, these scripts aim to simplify repetitive tasks while offering insights into gameplay strategies.
 
-⚠️ **Important:** Use this responsibly. It’s meant for learning and fun. Don’t share your private info and maybe test on small accounts first.
-
----
-
-## What’s in here
-
-* **`main.py`** – Automatically buys and sells coins to keep a pool balanced.
-* **`sell_all.py`** – Sells all your coins safely, except for ones you want to keep.
-* **`requirements.txt`** – Install all the Python packages you need.
+> ⚠️ **Disclaimer:** Use responsibly. These scripts are intended for learning and community purposes only. Test on small accounts first, and never share private credentials.
 
 ---
 
-## How to Use
+## Folder Contents
 
-1. **Clone this folder**
+| File               | Description                                                                |
+| ------------------ | -------------------------------------------------------------------------- |
+| `main.py`          | Automates buying and selling of a specified coin to maintain pool balance. |
+| `sell_all.py`      | Sells all coins in your portfolio safely, excluding protected coins.       |
+| `requirements.txt` | Python dependencies required to run the scripts.                           |
+
+---
+
+## Installation
+
+1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/rugplay-kit.git
-cd rugplay-kit/Rugplay\ Trading\ BOT
+git clone https://github.com/gatsbyingdev/rugplay-kit.git
+cd rugplay-kit/Rugplay/
 ```
 
-2. **Install the packages**
+2. **Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Set up your environment variables**
-   You’ll need:
+3. **Configure environment variables**
+
+Set the following variables for authentication and headers:
 
 ```
 CF_CLEARANCE=<your cf_clearance cookie>
@@ -38,39 +41,42 @@ SECURE_BETTER_AUTH=<your session token>
 USER_AGENT=<your browser user-agent string>
 ```
 
-Tip: use a `.env` file with `python-dotenv` if you want.
-
-4. **Run the scripts**
-
-```bash
-python main.py
-# or
-python sell_all.py
-```
+> Recommended: Use a `.env` file with `python-dotenv` to manage credentials securely.
 
 ---
 
-## Safety Tips
+## Usage
 
-* Test with small amounts first.
-* Always use **env variables**, not hard-coded tokens.
-* Keep an eye on what the scripts are doing.
-* Stop the script if something seems off.
+### Running Scripts
+
+```bash
+python main.py      # Automatically manages coin trading
+python sell_all.py  # Sells all coins in portfolio safely
+```
+
+### Best Practices
+
+* Test scripts with minimal amounts first.
+* Always use environment variables; do not hard-code sensitive information.
+* Monitor the script output to ensure proper operation.
+* These scripts are intended as **community tools**, not investment advice.
 
 ---
 
 ## Contributing
 
-If you make a script or improvement:
+Contributions are welcome. To contribute:
 
-* Keep it simple and easy to understand.
-* Explain what it does in the comments.
-* Submit a PR so the community can use it.
+1. Keep code clean, readable, and well-commented.
+2. Explain script functionality clearly.
+3. Submit a pull request to `gatsbyingdev/rugplay-kit`.
+
+All contributions must adhere to the community-focused purpose of the toolkit.
 
 ---
 
 ## License
 
-MIT – Use it, share it, learn from it, just don’t be sketchy.
+MIT License – Free to use, modify, and share for educational and community purposes.
 
 Do you want me to do that next?
