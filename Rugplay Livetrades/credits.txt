@@ -1,0 +1,7 @@
+Credits
+
+This project was fully created by inyourface34456.
+All original implementation, logic, and structure belong to them.
+
+GitHub:
+https://github.com/inyourface34456
