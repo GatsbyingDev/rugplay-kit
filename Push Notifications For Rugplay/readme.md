@@ -1,4 +1,3 @@
-````md
 # RugPlay Live Trade Notifier
 
 This script monitors live RugPlay trades in real time using WebSockets and sends push notifications when large trades happen. It’s built to be lightweight, fast, and reliable, with simple priority tiers so important trades stand out immediately.
