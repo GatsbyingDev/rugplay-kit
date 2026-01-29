@@ -1,60 +1,84 @@
 # Rugplay Kit
 
-**Rugplay Kit** is the ultimate **open-source community toolkit** for Rugplay.com. It provides a collection of scripts, tools, and resources designed to help players manage coins, automate actions, and optimize gameplay strategies.
+![GitHub Repo Size](https://img.shields.io/github/repo-size/yourusername/rugplay-kit) ![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/rugplay-kit) ![License](https://img.shields.io/badge/license-MIT-brightgreen) ![Open Source](https://img.shields.io/badge/Open%20Source-Yes-blue)
 
-Built **by the community, for the community**, this toolkit focuses on making in-game activities easier and more efficient while remaining safe and educational.
+**Rugplay Kit** is the ultimate **open-source community toolkit** for Rugplay.com. It equips players to **play smarter, track coins, automate actions, and climb the leaderboards**.
 
-> ⚠️ **Disclaimer:** These tools are for learning and community use only. Use responsibly, do not share private credentials, and test scripts on small accounts first.
+Built **by the community, for the community**, it’s plug-and-play, safe, and fully educational.
+
+> ⚠️ **Disclaimer:** For learning and community use only. Do not share private credentials. Test on small accounts first.
 
 ---
 
 ## Open Source & Community-Driven
 
-This toolkit is **fully open source**. Everyone is welcome to explore, modify, and contribute to improve it. Transparency, safety, and education are at the core of the project.
+This toolkit is **fully open source**. Explore, modify, and contribute freely. Transparency, safety, and education are the foundation.
+
+[Contribute on GitHub](https://github.com/gatsbyingdev/rugplay-kit)
 
 ---
 
 ## What This Toolkit Includes
 
-* **Automation Scripts:** Tools to automate repetitive tasks like buying, selling, or balancing coins.
-* **Trading Helpers:** Scripts that help you analyze coin pools, optimize trades, and monitor portfolio performance.
-* **Calculators & Utilities:** Community-made resources to compute bet payouts, coin values, and leaderboard progress.
-* **Guides & Examples:** Step-by-step guides and sample setups to help players use the toolkit safely and effectively.
+* **Automation Scripts** – Automate repetitive tasks like buying, selling, and balancing coins.
+* **Trading Helpers** – Analyze coin pools, optimize trades, monitor portfolios.
+* **Calculators & Utilities** – Compute bet payouts, coin values, leaderboard progress.
+* **Guides & Examples** – Step-by-step tutorials for safe and effective usage.
 
-This toolkit provides **smarter ways to interact with Rugplay** and is entirely **community-driven**. It is **not intended as financial advice** or a guaranteed profit tool.
+> Smarter ways to interact with Rugplay. Entirely community-driven. Not financial advice.
 
 ---
 
 ## Key Features
 
-* Streamline in-game tasks for efficiency
-* Manage and monitor coins safely
+* Streamline in-game tasks for maximum efficiency
+* Safely manage and monitor your coins
 * Automate trading and portfolio adjustments
-* Learn strategies and best practices through community examples
+* Learn strategies and best practices from community examples
+
+---
+
+## Tools Included
+
+| Tool Name                      | Description                                    |
+| ------------------------------ | ---------------------------------------------- |
+| Push Notifications For Rugplay | Real-time notifications for key in-game events |
+| Rugplay Auto Gamble            | Automates mine gambling efficiently            |
+| Rugplay Daily Claim            | Claim daily rewards automatically              |
+| Rugplay Livetrades             | Track live trades in real-time                 |
+| Rugplay Trading Bot            | Automate portfolio trading and optimization    |
+
+> Each tool is **easy to install**, safe, and educational.
 
 ---
 
 ## Safety Guidelines
 
-* Always use environment variables for credentials.
-* Test scripts with small amounts first.
-* Monitor outputs continuously; stop scripts if anything behaves unexpectedly.
-* Treat the toolkit as a **community educational resource**, not investment advice.
+* Use **environment variables** for credentials
+* Test scripts with small amounts first
+* Monitor outputs in real-time; stop if unexpected behavior occurs
+* Treat the toolkit as an **educational resource**, not financial advice
 
 ---
 
 ## Contributing
 
-Contributions are encouraged. To contribute:
+Contributions are welcome:
 
-1. Keep code clean, readable, and commented.
-2. Clearly explain what the script or resource does.
-3. Ensure contributions align with the **community-focused and educational purpose** of the toolkit.
+1. Keep code **clean, readable, and commented**
+2. Explain the purpose and functionality of your contribution
+3. Align contributions with **community and educational goals**
 
-All contributions are **open source**, and will remain free for everyone to use, study, and improve.
+All contributions remain **open source**, free to use, study, and improve.
 
 ---
 
 ## License
 
-MIT License – free to use, modify, share, and contribute for **educational and community purposes**.
+MIT License – free to **use, modify, share, and contribute** for educational and community purposes.
+
+---
+
+## Quick Links
+
+[Installation Guide](#) • [Getting Started](#) • [Contribute](#) • [GitHub](https://github.com/gatsbyingdev/rugplay-kit)
