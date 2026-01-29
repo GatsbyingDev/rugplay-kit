@@ -14,7 +14,7 @@ Built **by the community, for the community**, it’s plug-and-play, safe, and f
 
 This toolkit is **fully open source**. Explore, modify, and contribute freely. Transparency, safety, and education are the foundation.
 
-[Contribute on GitHub](https://github.com/gatsbyingdev/rugplay-kit)
+[Contribute on GitHub](https://github.com/gatsbyingdev/rugplay-kit/pulls)
 
 ---
 
