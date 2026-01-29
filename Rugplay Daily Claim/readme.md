@@ -61,7 +61,7 @@ Template:
     "max_attempts_per_account": 3
   },
   "metadata": {
-    "created_by": "GatsbyingDev",
+    "created_by": "@Cash1416 & @GatsbyingDev",
     "script_version": "1.0.0",
     "description": "Template config for Rugplay Daily Reward Claimer."
   }
@@ -123,5 +123,3 @@ What the script does:
 * **Author:** @Cash1416 & @GatsbyingDev
 * **Script Version:** 1.0.0
 * **Description:** Full-featured Rugplay Daily Reward Claimer with multi-account support, logging, and retries.
-
-```
