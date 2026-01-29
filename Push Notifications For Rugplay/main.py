@@ -2,6 +2,11 @@ import asyncio, json, requests, websockets # remember to install these shi-
 
 WS = "wss://ws.rugplay.com"
 TOPIC = "rugrugrugrugrugrug" # edit this to your desired name, and note it down
+WATCH_FOR_COMMENTS = True
+WATCH_FOR_TRADES = True
+
+# List the coins you want to watch for comments (not live trades)
+COINS = ["DPED2026", "HTD3", "VOLCANOO"]
 
 def format_dollars(amount):
     if amount >= 1_000_000:
@@ -28,7 +33,7 @@ def format_price(price):
     else:
         return f"${price:.6f}".rstrip('0').rstrip('.')
 
-def notif(title, msg, priority="default", tags="rugplay"):
+async def notif(title, msg, priority="default", tags="rugplay"):
     try:
         # encode title and tags as UTF-8 bytes, so we dont get error for trying to send emojis
         headers = {
@@ -48,8 +53,41 @@ def notif(title, msg, priority="default", tags="rugplay"):
     except Exception as e:
         print(f"Unexpected error: {e}")
 
+async def listen_coin(coin: str):
+    while True:
+        try:
+            async with websockets.connect(WS) as ws:
+                await ws.send(json.dumps({
+                    "type": "set_coin",
+                    "coinSymbol": coin
+                }))
+
+                print(f"Listening for comments on {coin}...")
+
+                while True:
+                    message = await ws.recv()
+                    data = json.loads(message)
+
+                    if data.get("type") == "new_comment":
+                        comment_data = data.get("data", {})
+                        username = comment_data.get("userName", "Unknown")
+                        content = comment_data.get("content", "")
+
+                        content_with_link = f"{content}\nhttps://rugplay.com/coin/{coin}"
+                        title = f"Comment on {coin} from @{username}"
+
+                        print(f"[{coin}] New comment from {username}: {content}")
+                        await notif(title, content_with_link)
+
+        except websockets.ConnectionClosed:
+            print(f"Connection for {coin} closed. Reconnecting in 5 seconds...")
+            await asyncio.sleep(5)
+        except Exception as e:
+            print(f"Error for {coin}: {e}. Reconnecting in 5 seconds...")
+            await asyncio.sleep(5)
+
 async def monitor():
-    print("Monitoring trades over $2.5k with priority tiers") 
+    print("Monitoring trades over $2.5k with priority tiers")
     while True:
         try:
             async with websockets.connect(WS, ping_interval=None, ping_timeout=None) as ws:
@@ -63,14 +101,14 @@ async def monitor():
                             continue
                         if data.get("type") != "all-trades":
                             continue
-                            
+
                         trade = data.get("data", {})
                         value = float(trade.get("totalValue", 0))
-                        
+
                         # Skip trades below $2.5k. you can change this threshold
                         if value < 2500:
                             continue
-                        
+
                         # Determine priority based on value tiers
                         if value <= 7500:     # you can change the threshold to your need
                             priority = "low"
@@ -80,7 +118,7 @@ async def monitor():
                             priority = "high"
                         else:  # >60k
                             priority = "urgent"
-                            
+
                         kind = trade.get("type", "")
                         username = trade.get("username", "???")
                         symbol = trade.get("coinSymbol", "???")
@@ -110,7 +148,7 @@ async def monitor():
                         body = f"{'+' if kind == 'BUY' else '-'}{cash_str} for {tokens_str} Tokens by @{username} https://rugplay.com/coin/{symbol} "
                         # +830.0K$ for 34.5 Tokens by @daddy <coin link here>
 
-                        notif(title, body, priority)
+                        await notif(title, body, priority)
                     except Exception as e:
                         print(f"Error processing trade: {e}")
                         continue
@@ -118,8 +156,16 @@ async def monitor():
             print(f"WebSocket error: {e}, reconnecting...")
             await asyncio.sleep(10)
 
+async def main():
+    tasks = [listen_coin(coin) for coin in COINS]
+    await asyncio.gather(
+        monitor(),
+        *tasks,
+    )
+
 if __name__ == "__main__":
     try:
-        asyncio.run(monitor())
+        asyncio.run(main())
     except KeyboardInterrupt:
         print("Monitoring stopped")
+
