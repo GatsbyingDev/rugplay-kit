@@ -1,6 +1,3 @@
-Got it. You want **everything in one README.md**—setup, config, instructions, everything. Here’s a complete, standalone README:
-
-```markdown
 # Rugplay Daily Claim
 
 Automated daily reward claimer for [Rugplay](https://rugplay.com).  
