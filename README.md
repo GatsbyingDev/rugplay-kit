@@ -1,6 +1,6 @@
 # Rugplay Kit
 
-![GitHub Repo Size](https://img.shields.io/github/repo-size/yourusername/rugplay-kit) ![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/rugplay-kit) ![License](https://img.shields.io/badge/license-MIT-brightgreen) ![Open Source](https://img.shields.io/badge/Open%20Source-Yes-blue)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/gatsbyingdev/rugplay-kit) ![GitHub last commit](https://img.shields.io/github/last-commit/gatsbyingdev/rugplay-kit) ![License](https://img.shields.io/badge/license-MIT-brightgreen) ![Open Source](https://img.shields.io/badge/Open%20Source-Yes-blue)
 
 **Rugplay Kit** is the ultimate **open-source community toolkit** for Rugplay.com. It equips players to **play smarter, track coins, automate actions, and climb the leaderboards**.
 
