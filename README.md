@@ -30,14 +30,14 @@ This toolkit is **fully open source**. Explore, modify, and contribute freely. T
 ---
 
 ## How to run
-If you are on Windows 🤮 you need [python](https://www.python.org/) from the Microsoft Store, for Linux it should already be installed
-Clone the repo by pressing the green code button and clicking "Download ZIP"
-Extract the zip
-Open a terminal or command prompt and navigate to your extracted folder with `cd "/folder/path"` (you can also drag a folder in to autocomplete the path)
-Now cd into one of the folders (e.g. `cd "Rugplay Daily Claim"`)
-On your first time you may need to run `pip install -r requirements.txt`
-Now go to the script folder's config.json and edit the configuration.
-Now go back to your terminal and run `python3 main.py`
+If you are on Windows 🤮 you need [python](https://www.python.org/) from the Microsoft Store, for Linux it should already be installed\
+Clone the repo by pressing the green code button and clicking "Download ZIP"\
+Extract the zip\
+Open a terminal or command prompt and navigate to your extracted folder with `cd "/folder/path"` (you can also drag a folder in to autocomplete the path)\
+Now cd into one of the folders (e.g. `cd "Rugplay Daily Claim"`)\
+On your first time you may need to run `pip install -r requirements.txt`\
+Now go to the script folder's config.json and edit the configuration.\
+Now go back to your terminal and run `python3 main.py`\
 
 ---
 
