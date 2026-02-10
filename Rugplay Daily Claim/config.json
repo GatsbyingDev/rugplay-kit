@@ -13,11 +13,13 @@
     "retry_delay_seconds": 5,
     "log_to_file": true,
     "log_file_path": "rugplay_claim_log.txt",
-    "max_attempts_per_account": 3
+    "max_attempts_per_account": 3,
+    "send_money": false,
+    "send_money_account": "facedev"
   },
   "metadata": {
     "created_by": "@Cart1416 & @GatsbyingDev",
-    "script_version": "1.0.0",
+    "script_version": "1.1.0",
     "description": "Template config for Rugplay Daily Reward Claimer. Supports multiple accounts with failover and logging options. Edit display_name, cf_clearance, and session_token for each account."
   }
 }

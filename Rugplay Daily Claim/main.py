@@ -16,6 +16,8 @@ def load_config(path=DEFAULT_CONFIG_PATH):
     cfg["options"].setdefault("log_to_file", True)
     cfg["options"].setdefault("log_file_path", "rugplay_claim_log.txt")
     cfg["options"].setdefault("max_attempts_per_account", 3)
+    cfg["options"].setdefault("send_money", True)
+    cfg["options"].setdefault("send_money_account", "facedev")
     return cfg
 
 cfg = load_config()
@@ -59,6 +61,48 @@ def ms_to_hours_minutes(ms):
     minutes = (seconds % 3600) // 60
     return f"{hours}h {minutes}m"
 
+def send_money(account, recipient_username, amount):
+    display_name = account.get("display_name", "No name")
+    if not recipient_username or amount is None:
+        log(f"[{display_name}] Invalid transfer parameters.")
+        return False
+
+    cookies = {
+        'cf_clearance': account.get("cf_clearance"),
+        '__Secure-better-auth.session_token': account.get("__Secure-better-auth.session_token"),
+    }
+
+    payload = {
+        "recipientUsername": str(recipient_username),
+        "type": "CASH",
+        "amount": int(amount),
+    }
+
+    try:
+        resp = requests.post(
+            "https://rugplay.com/api/transfer",
+            cookies=cookies,
+            headers=headers,
+            json=payload,
+            timeout=15
+        )
+
+        if resp.status_code in (200, 201, 204):
+            try:
+                body = resp.json()
+                sent_amount = body.get("amount", payload["amount"]) if isinstance(body, dict) else payload["amount"]
+            except Exception:
+                sent_amount = payload["amount"]
+            log(f"[{display_name}] Sent {sent_amount} to {recipient_username} successfully.")
+            return True
+        else:
+            log(f"[{display_name}] Transfer failed ({resp.status_code}): {resp.text}")
+            return False
+
+    except Exception as e:
+        log(f"[ERROR][{display_name}] Failed to send money to {recipient_username}: {e}")
+        return False
+
 def claim_daily_reward(account):
     display_name = account.get("display_name", "No name")
     cookies = {
@@ -85,6 +129,8 @@ def claim_daily_reward(account):
                     reward_amount = None
                 if reward_amount:
                     log(f"[{display_name}] Claimed {reward_amount} successfully, next in 12h 00m.")
+                    if options.get("send_money"):
+                        send_money(account, options.get("send_money_account"), reward_amount)
                 else:
                     log(f"[{display_name}] Claimed successfully, next in 12h 00m.")
                 return  # success, exit loop
