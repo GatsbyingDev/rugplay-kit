@@ -37,7 +37,7 @@ Open a terminal or command prompt and navigate to your extracted folder with `cd
 Now cd into one of the folders (e.g. `cd "Rugplay Daily Claim"`)\
 On your first time you may need to run `pip install -r requirements.txt`\
 Now go to the script folder's config.json and edit the configuration.\
-Now go back to your terminal and run `python3 main.py`\
+Now go back to your terminal and run `python3 main.py`
 
 ---
 
